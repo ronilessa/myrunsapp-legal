@@ -1,0 +1,439 @@
+<title>MyRuns — Política de Privacidade</title>
+<meta name="description" content="Política de privacidade do MyRuns: o que o app faz com dados de localização, treino e a sincronização opcional com o Health Connect.">
+<style>
+  :root {
+    --bg: #f7f6f1;
+    --surface: #ffffff;
+    --ink: #1c2620;
+    --muted: #5b6660;
+    --accent: #2f6b4f;
+    --accent-ink: #163826;
+    --accent-soft: #dce8de;
+    --line: #ddd8ca;
+    --line-strong: #c7c1b0;
+    --code-bg: #eeeae0;
+    --focus: #2f6b4f;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #12160f;
+      --surface: #191f16;
+      --ink: #ecefe7;
+      --muted: #9aa69d;
+      --accent: #74c99b;
+      --accent-ink: #d9f2e3;
+      --accent-soft: #1f3226;
+      --line: #2b3226;
+      --line-strong: #3c4636;
+      --code-bg: #202a1d;
+      --focus: #74c99b;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #12160f;
+    --surface: #191f16;
+    --ink: #ecefe7;
+    --muted: #9aa69d;
+    --accent: #74c99b;
+    --accent-ink: #d9f2e3;
+    --accent-soft: #1f3226;
+    --line: #2b3226;
+    --line-strong: #3c4636;
+    --code-bg: #202a1d;
+    --focus: #74c99b;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, "Segoe UI", "Helvetica Neue", ui-sans-serif, system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .doc { animation: subir 0.5s ease-out both; }
+    @keyframes subir {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  }
+
+  a { color: var(--accent-ink); text-decoration-thickness: 1.5px; text-underline-offset: 2px; }
+  a:hover { color: var(--accent); }
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  .pagina {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: clamp(28px, 6vw, 72px) 20px 80px;
+  }
+
+  header.topo {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 22px;
+    margin-bottom: 30px;
+  }
+
+  .marca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .marca svg { flex: none; }
+
+  .marca .nome {
+    font-family: Charter, "Iowan Old Style", "Palatino Linotype", ui-serif, Georgia, serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .marca .sub {
+    font-size: 0.8rem;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .meta {
+    text-align: right;
+    font-size: 0.82rem;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  h1.titulo {
+    font-family: Charter, "Iowan Old Style", "Palatino Linotype", ui-serif, Georgia, serif;
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+    margin: 0 0 10px;
+  }
+
+  p.intro {
+    color: var(--muted);
+    font-size: 1.02rem;
+    max-width: 60ch;
+    margin: 0 0 30px;
+  }
+
+  .resumo {
+    background: var(--accent-soft);
+    border: 1px solid var(--line-strong);
+    border-radius: 10px;
+    padding: 20px 22px;
+    margin-bottom: 40px;
+  }
+
+  .resumo .rotulo {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .resumo ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 9px;
+  }
+
+  .resumo li {
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+    font-size: 0.96rem;
+  }
+
+  .resumo li::before {
+    content: "";
+    flex: none;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    margin-top: 0.55em;
+  }
+
+  nav.indice {
+    margin-bottom: 44px;
+    padding: 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 14px 0;
+  }
+
+  nav.indice ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 22px;
+    font-size: 0.86rem;
+  }
+
+  nav.indice a {
+    color: var(--muted);
+    text-decoration: none;
+  }
+
+  nav.indice a:hover { color: var(--accent-ink); text-decoration: underline; }
+
+  section.artigo {
+    margin-bottom: 38px;
+    scroll-margin-top: 20px;
+  }
+
+  section.artigo h2 {
+    font-family: Charter, "Iowan Old Style", "Palatino Linotype", ui-serif, Georgia, serif;
+    font-size: 1.28rem;
+    letter-spacing: -0.01em;
+    margin: 0 0 12px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+
+  section.artigo h2 .num {
+    font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+    font-size: 0.85rem;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  section.artigo p, section.artigo li {
+    font-size: 0.98rem;
+  }
+
+  section.artigo p { margin: 0 0 14px; }
+
+  section.artigo ul, section.artigo ol.regras {
+    margin: 0 0 14px;
+    padding-left: 22px;
+  }
+
+  section.artigo li { margin-bottom: 6px; }
+
+  section.artigo strong { font-weight: 650; }
+
+  .tabela-wrap { overflow-x: auto; margin: 0 0 16px; }
+
+  table.permissoes {
+    width: 100%;
+    min-width: 460px;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+
+  table.permissoes caption { text-align: left; font-size: 0.78rem; color: var(--muted); margin-bottom: 8px; }
+
+  table.permissoes th, table.permissoes td {
+    text-align: left;
+    padding: 9px 12px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+
+  table.permissoes th {
+    font-size: 0.74rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+  }
+
+  table.permissoes code {
+    font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+    font-size: 0.84rem;
+    background: var(--code-bg);
+    padding: 1px 6px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+
+  .caixa-hc {
+    border: 1px solid var(--line-strong);
+    border-radius: 10px;
+    padding: 18px 20px;
+    background: var(--surface);
+    margin: 0 0 16px;
+  }
+
+  .caixa-hc .rotulo-hc {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .caixa-hc p:last-child { margin-bottom: 0; }
+
+  footer.rodape {
+    margin-top: 56px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+    font-size: 0.86rem;
+    color: var(--muted);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    justify-content: space-between;
+  }
+
+  footer.rodape a { color: var(--muted); }
+</style>
+
+<div class="doc pagina">
+
+  <header class="topo">
+    <div class="marca">
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+        <circle cx="17" cy="17" r="16" stroke="var(--accent)" stroke-width="1.6"/>
+        <path d="M8 20.5 L13 14.5 L17 18 L22.5 10.5" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <circle cx="22.5" cy="10.5" r="1.8" fill="var(--accent)"/>
+      </svg>
+      <div>
+        <div class="nome">MyRuns</div>
+        <div class="sub">Política de Privacidade</div>
+      </div>
+    </div>
+    <div class="meta">
+      Vigente desde<br>13 de agosto de 2026
+    </div>
+  </header>
+
+  <h1 class="titulo">Como o MyRuns trata os seus dados</h1>
+  <p class="intro">Esta política descreve, em linguagem direta, o que o MyRuns faz — e principalmente o que <em>não</em> faz — com dados de localização, treino e saúde. Aplica-se ao app MyRuns para Android (celular e, quando disponível, relógio).</p>
+
+  <div class="resumo">
+    <span class="rotulo">Resumo rápido</span>
+    <ul>
+      <li>O MyRuns não tem conta, login nem servidor próprio — todos os dados de treino ficam armazenados só no seu aparelho.</li>
+      <li>Nada é enviado para o desenvolvedor ou para terceiros. Sem anúncios, sem análise de uso, sem rastreadores.</li>
+      <li>A localização (GPS) é usada só durante um treino ativo, para registrar o percurso — nunca em segundo plano fora disso.</li>
+      <li>A sincronização com o Health Connect é opcional, vem <strong>desligada por padrão</strong>, e o MyRuns só <em>escreve</em> treinos lá — nunca lê nada de volta.</li>
+    </ul>
+  </div>
+
+  <nav class="indice" aria-label="Seções desta política">
+    <ol>
+      <li><a href="#dados-locais">1. Dados armazenados no aparelho</a></li>
+      <li><a href="#permissoes">2. Permissões usadas</a></li>
+      <li><a href="#compartilhamento">3. Compartilhamento de dados</a></li>
+      <li><a href="#health-connect">4. Health Connect</a></li>
+      <li><a href="#retencao">5. Retenção e exclusão</a></li>
+      <li><a href="#seguranca">6. Segurança</a></li>
+      <li><a href="#criancas">7. Uso por crianças</a></li>
+      <li><a href="#alteracoes">8. Alterações nesta política</a></li>
+      <li><a href="#contato">9. Contato</a></li>
+    </ol>
+  </nav>
+
+  <section class="artigo" id="dados-locais">
+    <h2><span class="num">01</span> Dados armazenados no aparelho</h2>
+    <p>O MyRuns guarda, apenas no banco de dados local do seu celular, as informações necessárias para registrar e mostrar seus treinos:</p>
+    <ul>
+      <li>Percurso (pontos de GPS), distância, ritmo e duração de cada sessão de corrida.</li>
+      <li>Frequência cardíaca média/máxima e calorias, quando o app consegue calcular esses valores.</li>
+      <li>Treinos planejados, perfil (peso, altura, data de nascimento, sexo) e configurações do app.</li>
+    </ul>
+    <p>Nada disso sai do aparelho por padrão. O MyRuns não tem backend próprio: não existe servidor do desenvolvedor recebendo ou armazenando cópia dos seus treinos.</p>
+  </section>
+
+  <section class="artigo" id="permissoes">
+    <h2><span class="num">02</span> Permissões usadas</h2>
+    <p>O app pede as seguintes permissões do sistema, sempre com uma explicação na tela antes do pedido:</p>
+    <div class="tabela-wrap">
+      <table class="permissoes">
+        <caption>Permissões do MyRuns e para que servem</caption>
+        <thead>
+          <tr><th>Permissão</th><th>Para quê</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>ACCESS_FINE_LOCATION</code></td><td>Registrar o percurso via GPS enquanto um treino outdoor está ativo.</td></tr>
+          <tr><td><code>FOREGROUND_SERVICE</code></td><td>Manter o treino sendo registrado mesmo com a tela apagada ou o app em segundo plano.</td></tr>
+          <tr><td><code>POST_NOTIFICATIONS</code></td><td>Mostrar a notificação persistente do treino em andamento e avisos de ritmo.</td></tr>
+          <tr><td><code>VIBRATE</code></td><td>Avisos de ritmo e de quilômetro por vibração.</td></tr>
+          <tr><td><code>WAKE_LOCK</code></td><td>Evitar que o sistema interrompa o registro do treino durante o uso ativo.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Sem <code>ACCESS_FINE_LOCATION</code>, o app continua funcionando normalmente para treinos de esteira — só o percurso ao ar livre depende dessa permissão.</p>
+  </section>
+
+  <section class="artigo" id="compartilhamento">
+    <h2><span class="num">03</span> Compartilhamento de dados</h2>
+    <p>O MyRuns não vende, aluga nem compartilha seus dados com anunciantes, redes de publicidade ou qualquer outro serviço de terceiros. Não há bibliotecas de análise de uso (analytics) nem de rastreamento embutidas no app. A única integração externa existente é a descrita na seção seguinte, e ela é opcional e controlada por você.</p>
+  </section>
+
+  <section class="artigo" id="health-connect">
+    <h2><span class="num">04</span> Health Connect (opcional)</h2>
+    <p>O MyRuns pode enviar seus treinos concluídos para o Health Connect — o repositório de dados de saúde do próprio Android, que fica no seu aparelho e é usado para deixar outros apps de saúde acessarem essas informações, se você quiser.</p>
+    <div class="caixa-hc">
+      <span class="rotulo-hc">Como funciona, exatamente</span>
+      <p><strong>Desligado por padrão.</strong> Nada é enviado até você ativar a opção em Ajustes → Health Connect.</p>
+      <p><strong>Só escrita.</strong> O MyRuns nunca lê dados do Health Connect — nem os seus, nem de outros apps.</p>
+      <p><strong>Sem retroatividade.</strong> Ativar o recurso não envia o seu histórico anterior — só os treinos concluídos a partir do momento em que você liga a opção.</p>
+      <p><strong>O que é enviado:</strong> sessão de exercício, distância e (quando disponível) calorias de cada treino. O MyRuns não envia frequência cardíaca nem VO2 máx. ao Health Connect, porque hoje o app não tem uma medição real e contínua desses dados — só uma média calculada, que não representaria bem uma amostra de saúde.</p>
+      <p>Você pode desligar a sincronização ou revogar a permissão a qualquer momento, direto na tela do Health Connect dentro do MyRuns ou pelas configurações de saúde do Android. Isso interrompe o envio de novos treinos; registros já gravados anteriormente continuam no Health Connect até você removê-los por lá (o MyRuns não tem acesso para apagá-los, já que não lê dados de volta).</p>
+    </div>
+  </section>
+
+  <section class="artigo" id="retencao">
+    <h2><span class="num">05</span> Retenção e exclusão</h2>
+    <p>Seus treinos ficam armazenados localmente até você apagá-los. Você pode excluir sessões individuais dentro do app, ou remover todos os dados de uma vez desinstalando o MyRuns — a desinstalação apaga o banco de dados local por completo, já que não existe cópia em nenhum servidor.</p>
+  </section>
+
+  <section class="artigo" id="seguranca">
+    <h2><span class="num">06</span> Segurança</h2>
+    <p>Os dados ficam no armazenamento privado do app, isolado pelo próprio Android de outros aplicativos no aparelho (sandbox padrão do sistema). Como os dados nunca trafegam pela internet, não há transmissão para proteger com criptografia de rede — a proteção relevante é a mesma que protege qualquer app local do seu Android: a segurança do próprio aparelho (tela de bloqueio, criptografia de disco do sistema).</p>
+  </section>
+
+  <section class="artigo" id="criancas">
+    <h2><span class="num">07</span> Uso por crianças</h2>
+    <p>O MyRuns não é direcionado a crianças e não coleta intencionalmente dados de menores de 13 anos. Como o app não tem conta nem envia dados para fora do aparelho, não há como o desenvolvedor identificar ou processar esse tipo de dado de qualquer forma.</p>
+  </section>
+
+  <section class="artigo" id="alteracoes">
+    <h2><span class="num">08</span> Alterações nesta política</h2>
+    <p>Se esta política mudar, a data de vigência no topo desta página será atualizada. Mudanças relevantes — como uma nova integração que envie dados para fora do aparelho — serão descritas nas notas de atualização do app antes de entrarem em vigor.</p>
+  </section>
+
+  <section class="artigo" id="contato">
+    <h2><span class="num">09</span> Contato</h2>
+    <p>Dúvidas sobre esta política ou sobre como o MyRuns trata seus dados podem ser enviadas para <a href="mailto:ronilessa@gmail.com">ronilessa@gmail.com</a>.</p>
+  </section>
+
+  <footer class="rodape">
+    <span>MyRuns — app de corrida 100% local</span>
+    <span>Vigente desde 13/08/2026</span>
+  </footer>
+
+</div>
