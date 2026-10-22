@@ -325,7 +325,7 @@
       </div>
     </div>
     <div class="meta">
-      Atualizada em<br>20 de outubro de 2026
+      Atualizada em<br>22 de outubro de 2026
     </div>
   </header>
 
@@ -362,8 +362,8 @@
     <h2><span class="num">01</span> Dados armazenados no aparelho</h2>
     <p>O MyRuns guarda, apenas no banco de dados local do seu celular, as informações necessárias para registrar e mostrar seus treinos:</p>
     <ul>
-      <li>Percurso (pontos de GPS), distância, ritmo e duração de cada sessão de corrida.</li>
-      <li>Frequência cardíaca média e máxima, passos, cadência e calorias, quando o app (ou o relógio) consegue medir ou calcular esses valores.</li>
+      <li>Percurso (pontos de GPS, incluindo a altitude), distância, ritmo e duração de cada sessão de corrida.</li>
+      <li>Frequência cardíaca média e máxima, tempo em cada zona de frequência cardíaca, passos, cadência e calorias, quando o app (ou o relógio) consegue medir ou calcular esses valores.</li>
       <li>Treinos planejados, perfil (peso, altura, data de nascimento, sexo) e configurações do app.</li>
     </ul>
     <p>Nada disso sai do aparelho por padrão. O MyRuns não tem backend próprio: não existe servidor do desenvolvedor recebendo ou armazenando cópia dos seus treinos.</p>
@@ -375,7 +375,7 @@
     <ul>
       <li><strong>Do celular para o relógio:</strong> os seus treinos planejados e, para calcular as zonas de frequência cardíaca, a data de nascimento e a frequência cardíaca máxima do seu perfil. Nome, peso, altura e sexo não são enviados.</li>
       <li><strong>Treino vinculado (esteira):</strong> se você iniciar uma esteira pelo celular e escolher vincular ao relógio, o relógio conduz o treino e envia ao celular, a cada segundo, o estado do treino (tempo, distância, etapa, frequência cardíaca, cadência e velocidade). O celular mostra isso ao vivo, fala os avisos de voz e devolve ao relógio os seus comandos (pausar, pular etapa, ajustar a meta, encerrar) e, ao final, a correção de distância que você informar.</li>
-      <li><strong>Resumo do treino:</strong> ao terminar, o relógio envia ao celular o resumo da sessão (distância, duração, ritmo, frequência cardíaca média e máxima, passos e cadência), que fica salvo no histórico do celular.</li>
+      <li><strong>Resumo do treino:</strong> ao terminar, o relógio envia ao celular o resumo da sessão (distância, duração, ritmo, frequência cardíaca média e máxima, tempo em cada zona de frequência cardíaca, passos e cadência), que fica salvo no histórico do celular.</li>
       <li><strong>No relógio</strong> ficam apenas o necessário para treinar: a cópia dos treinos, os dados de perfil acima e o fator de calibração da esteira. O histórico completo fica no celular.</li>
     </ul>
     <p>Essa comunicação acontece entre os seus próprios aparelhos pareados, pelo mecanismo do Wear OS (Bluetooth e serviços do Google Play que fazem parte do sistema). O MyRuns não tem servidor: o desenvolvedor não recebe nenhum desses dados.</p>
@@ -417,7 +417,8 @@
       <span class="rotulo-hc">Como funciona, exatamente</span>
       <p><strong>Desligado por padrão.</strong> Nada é enviado até você ativar a opção em Ajustes → Health Connect.</p>
       <p><strong>Só escrita.</strong> O MyRuns nunca lê dados do Health Connect — nem os seus, nem de outros apps.</p>
-      <p><strong>Sem retroatividade.</strong> Ativar o recurso não envia o seu histórico anterior — só os treinos concluídos a partir do momento em que você liga a opção.</p>
+      <p><strong>Você escolhe como enviar.</strong> Com a opção ligada, os treinos novos podem ser enviados automaticamente ao sair do resumo do treino, ou o app pergunta a cada treino se você quer enviar.</p>
+      <p><strong>Treinos antigos só por escolha sua.</strong> Ativar o recurso não envia o seu histórico automaticamente. Se quiser, em Ajustes → Health Connect → "Enviar treinos antigos" você escolhe manualmente quais treinos já salvos enviar (nada vem marcado).</p>
       <p><strong>O que é enviado:</strong> sessão de exercício, distância e (quando disponível) calorias de cada treino. O MyRuns não envia ao Health Connect a frequência cardíaca, o VO2 máx., os passos nem a cadência: esses dados ficam só no MyRuns.</p>
       <p>Você pode desligar a sincronização ou revogar a permissão a qualquer momento, direto na tela do Health Connect dentro do MyRuns ou pelas configurações de saúde do Android. Isso interrompe o envio de novos treinos; registros já gravados anteriormente continuam no Health Connect até você removê-los por lá (o MyRuns não tem acesso para apagá-los, já que não lê dados de volta).</p>
     </div>
@@ -450,7 +451,7 @@
 
   <footer class="rodape">
     <span>MyRuns — app de corrida 100% local</span>
-    <span>Atualizada em 20/10/2026</span>
+    <span>Atualizada em 22/10/2026</span>
   </footer>
 
 </div>
